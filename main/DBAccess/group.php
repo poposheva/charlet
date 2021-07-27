@@ -4,7 +4,7 @@
     function DBAccessGroup_One($config,$id){
         $DB = new DBAccesser($config);
 
-        $result = $DB->Query("SELECT * FROM ".GROUPTABLE." WHERE id=".$id);
+        $result = $DB->Query("SELECT * FROM ".GROUPTABLE." WHERE id=@1",$id);
 
         return $result[0];
     }
@@ -24,18 +24,18 @@
         $desc = $config["PostData"]["desc"];
         $hashids = $hashid;
 
-        $parentid = $DB->AutoIDQuery("INSERT INTO ".GROUPTABLE."(name,description,hashtaglist) VALUES ('".$name."','".$desc."','".$hashids."')");
-        $DB->NoReturnValueQuery("UPDATE ".HASHTAGTABLE." SET parentgroup='".$parentid."' WHERE id=".$hashid);
+        $parentid = $DB->AutoIDQuery("INSERT INTO ".GROUPTABLE."(name,description,hashtaglist) VALUES ('@1','@2','@3')",$name,$desc,$hashids);
+        $DB->NoReturnValueQuery("UPDATE ".HASHTAGTABLE." SET parentgroup='@1' WHERE id=@2",$parentid,$hashid);
     }
 
     function DBAccessGroup_AddHashTag($config,$group,$hash){
         $DB = new DBAccesser($config);
 
-        $result = $DB->Query("SELECT * FROM ".GROUPTABLE."WHERE id=".$group);
+        $result = $DB->Query("SELECT * FROM ".GROUPTABLE."WHERE id=@1",$group);
         $update_ids = $result[0]["hashtaglist"] . "," . $hash;
 
-        $DB->NoReturnValueQuery("UPDATE ".GROUPTABLE." SET hashtaglist='".$update_ids."' WHERE id=".$group);
-        $DB->NoReturnValueQuery("UPDATE ".HASHTAGTABLE." SET parentgroup='".$group."' WHERE id=".$hash);
+        $DB->NoReturnValueQuery("UPDATE ".GROUPTABLE." SET hashtaglist='@1' WHERE id=@2",$update_ids,$group);
+        $DB->NoReturnValueQuery("UPDATE ".HASHTAGTABLE." SET parentgroup='@1' WHERE id=@2",$group,$hash);
     }
 
 ?>

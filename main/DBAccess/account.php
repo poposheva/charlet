@@ -4,7 +4,7 @@
     function DBAccessAccount_One($config,$id){
         $DB = new DBAccesser($config);
 
-        $record = $DB->Query("SELECT * FROM ".ACCOUNTTABLE." WHERE id=".$id);
+        $record = $DB->Query("SELECT * FROM @1 WHERE id=@2",ACCOUNTTABLE,$id);
 
         return $record[0];
     }
@@ -12,7 +12,7 @@
     function DBAccessAccount_Login($config,$name,$pass){
         $DB = new DBAccesser($config);
 
-        $record = $DB->Query("SELECT * FROM ".ACCOUNTTABLE." WHERE name='".$name."'");
+        $record = $DB->Query("SELECT * FROM @1 WHERE name='@2'",ACCOUNTTABLE,$name);
         $pass = md5($pass);//password_hash($pass,PASSWORD_DEFAULT);
         
         if($pass == $record[0]["password"]){
@@ -46,17 +46,15 @@
         $mail = SessionGet("CreateUser_Mail");
         $pass = SessionGet("CreateUser_Pass");
 
-        var_dump("INSERT INTO `".ACCOUNTTABLE."` (`name`, `mail`, `password`, `timeline`, `authority`) VALUES ('".$name."','".$mail."','".$pass."','','')");
-        exit();
-        $DB->NoReturnValueQuery("INSERT INTO `".ACCOUNTTABLE."` (`name`, `mail`, `password`, `timeline`, `authority`) VALUES ('".$name."','".$mail."','".$pass."','','')");
-        
+        $DB->NoReturnValueQuery("INSERT INTO `@1` (`name`, `mail`, `password`, `timeline`, `authority`) VALUES ('@2','@3','@4','','')",ACCOUNTTABLE,$name,$mail,$pass);
     }
 
     function DBAccessAccount_ForDisplayTweet($config){
         $ret = array();
         $DB = new DBAccesser($config);
 
-        $record = $DB->Query("SELECT * FROM ".ACCOUNTTABLE);
+        $record = $DB->Query("SELECT * FROM @1",ACCOUNTTABLE);
+        
         foreach($record as $value){
             $ret[$value["id"]] = $value;
         }

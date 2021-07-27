@@ -14,14 +14,15 @@
     }
 
     function CreateDB(){
-        $us_name = SessionGet("SETUP_RA_NAME");
-        $us_mail = SessionGet("SETUP_RA_MAIL");
-        $us_pass = md5(SessionGet("SETUP_RA_PASSWORD"));
 
         $host = SessionGet("SETUP_DB_HOST");
         $user = SessionGet("SETUP_DB_ACCOUNT");
         $pass = SessionGet("SETUP_DB_PASSWORD");
         $check = new mysqli($host,$user,$pass);
+
+        $us_name = mysqli_real_escape_string($check,SessionGet("SETUP_RA_NAME"));
+        $us_mail = mysqli_real_escape_string($check,SessionGet("SETUP_RA_MAIL"));
+        $us_pass = mysqli_real_escape_string($check,md5(SessionGet("SETUP_RA_PASSWORD")));
 
         if ($check->connect_error) {
             return false;
