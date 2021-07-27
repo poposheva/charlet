@@ -1,4 +1,4 @@
-<form class="dialog_registhash" method="POST" action="?mode=domain&case=create">
+<form class="dialog_registhash" method="POST" action="?mode=group&case=create">
     <h3>新しいグループを作成します。</h3>
     <h4>グループ名</h4>
     <input type="text" name="name" required autofocus value="" onkeyup="Charlet_CreateGroupButton($(this))">

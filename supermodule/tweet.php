@@ -5,9 +5,7 @@
     }
 
     function TweetTransform($tweetbody){
-        $tweetbody = str_replace("\r\n","<br>",$tweetbody);
-
-        return preg_replace_callback(
+        $tweetbody = preg_replace_callback(
             "/#[^\s#]*/",
             function($m){
                 if(preg_match("/#[^\s#]*/",$m[0])){
@@ -18,6 +16,9 @@
             },
             $tweetbody
         );
+        $tweetbody = str_replace("\r\n","<br>",$tweetbody);
+
+        return $tweetbody;
     }
 
     function TweetReplys($data,$reply){
