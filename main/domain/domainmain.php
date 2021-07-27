@@ -17,6 +17,7 @@
          ));
          $tweetdata = DBAccessTweet_ByDomain($config,$config["URLQuery"]["select"]);
          $tweetdata["tweet"] = DBResult_TimeSort($tweetdata["tweet"]);
+         $tweetdata["tweet"] = DBResult_SearchWord($tweetdata,$config["PostData"]["word"]);
          $ReturnSceen["ContentMain2"] = UiTweetList($config,array(
             "Data" => $tweetdata
          ));

@@ -30,7 +30,7 @@
                 $tweetdata["tweet"] = DBResult_TimeSort($tweetdata["tweet"]);
                 break;
          }
-
+         $tweetdata["tweet"] = DBResult_SearchWord($tweetdata,$config["PostData"]["word"]);
          $ReturnSceen["ContentMain2"] = UiTweetList($config,array(
             "Data" => $tweetdata
          ));

@@ -24,4 +24,15 @@
         usort($data,"DBResult_PopularSort_Callback");
         return $data;
     }
+
+    function DBResult_SearchWord($tweetdata,$word){
+        if($word != ""){
+            foreach($tweetdata["tweet"] as $key=>$value){
+                if(strpos($value["tweet"],$word)===FALSE){
+                    unset($tweetdata["tweet"][$key]);
+                }
+            }
+        }
+        return $tweetdata["tweet"];
+    }
 ?>
