@@ -25,6 +25,12 @@
             $Config["DBInfomation"] = ProgramPreprocessing_DB($DBDataFile);
         }
 
+        //URL
+        $Config["SystemRootURL"] = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER["HTTP_HOST"] . $_SERVER['SCRIPT_NAME'];
+        $Config["SystemRootURL_Protocol"] = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://');
+        $Config["SystemRootURL_Domain"] = $_SERVER["HTTP_HOST"];
+        $Config["SystemRootURL_Path"] = $_SERVER['SCRIPT_NAME'];
+
         //Now URL
         $Config["NowURL"] = $_SERVER['REQUEST_URI'];
 

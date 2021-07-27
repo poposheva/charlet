@@ -39,7 +39,7 @@
             if ($screen->ExecuteCheck($Post)){
                 if($Post["acc_pass"] == $Post["acc_repass"]){
                     $token = DBAccessAccount_TemporaryRegistration($Post);
-                    MailSend_TemporaryRegistration($Post,$token);
+                    MailSend_TemporaryRegistration($config,$Post,$token);
                     header("Location: ?mode=account&case=mail");
                     return "";
                 }
@@ -49,5 +49,18 @@
         $ReturnScreen["ContentMain0"] = $screen->CreateForm();
 
         return $ReturnScreen;
+    }
+
+    function MailSend_TemporaryRegistration($config,$data,$token){
+        $mail = new MailSender();
+        $screen = new SingleScreen();
+        $URL = $config["SystemRootURL"]."?mode=account&case=regist&token=".$token;
+        $screen->Assign("name",$data["acc_name"]);
+        $screen->Assign("url",$URL);
+
+        $mail->SetTo($data["acc_mail"])
+             ->SetSubject("Charlet Account Registration Information")
+             ->SetBody($screen->Fetch("mail/temporaryregistration.tpl"))
+             ->Send();
     }
 ?>

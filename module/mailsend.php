@@ -1,15 +1,44 @@
 <?php
-    function MailSend_TemporaryRegistration($data,$token){
-        $screen = new SingleScreen();
-        $URL = "http://localhost/project/source/?mode=account&case=regist&token=".$token;
+    class MailSender{
+        private $from;
+        private $to;
+        private $subject;
+        private $body;
+        
+        public function __construct(){
+            $this->subject = "System Mail";
+        }
 
-        $screen->Assign("name",$data["acc_name"]);
-        $screen->Assign("url",$URL);
+        public function SetFrom($var){
+            $this->from = $var;
 
-        mail(
-            $data["acc_mail"],
-            "Charlet Account Registration Information",
-            $screen->Fetch("mail/temporaryregistration.tpl")
-        );
+            return $this;
+        }
+
+        public function SetTo($var){
+            $this->to = $var;
+
+            return $this;
+        }
+
+        public function SetSubject($var){
+            $this->subject = $var;
+
+            return $this;
+        }
+
+        public function SetBody($var){
+            $this->body = $var;
+
+            return $this;
+        }
+
+        public function Send(){
+            mail(
+                $this->to,
+                $this->subject,
+                $this->body
+            );
+        }
     }
 ?>
