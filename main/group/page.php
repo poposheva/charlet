@@ -9,7 +9,7 @@
         $ReturnSceen["ContentHeader"] = UiHeader($config,array());
 
          $ReturnSceen["ContentMain0"] = UiSearchBox($config,array(
-             "Word" => $config["PostData"]["word"]
+             "Word" => $config["Request"]["word"]
          ));
 
          $ReturnSceen["ContentMain1"] = UiPageHeader($config,array(
@@ -19,20 +19,27 @@
              "category" => $config["URLQuery"]["category"]
          ));
 
-         $tweetdata = DBAccessTweet_ByGroup($config,$config["URLQuery"]["select"]);
-         switch($config["URLQuery"]["category"]){
-            case "2":
-                $tweetdata["tweet"] = DBResult_PopularSort($tweetdata["tweet"]);
-                break;
-            case "1":
-            default:
-                $tweetdata["tweet"] = DBResult_TimeSort($tweetdata["tweet"]);
-                break;
+         if($config["URLQuery"]["category"] == "3"){
+            $HashTagList = DBAccessHashTag_ByGroup($config,$config["URLQuery"]["select"]);
+            $ReturnSceen["ContentMain2"] = UiHashTagList($config,array(
+                "Data" => $HashTagList
+             ));
+         }else{
+            $tweetdata = DBAccessTweet_ByGroup($config,$config["URLQuery"]["select"]);
+            switch($config["URLQuery"]["category"]){
+               case "2":
+                   $tweetdata["tweet"] = DBResult_PopularSort($tweetdata["tweet"]);
+                   break;
+               case "1":
+               default:
+                   $tweetdata["tweet"] = DBResult_TimeSort($tweetdata["tweet"]);
+                   break;
+            }
+            $tweetdata["tweet"] = DBResult_SearchWord($tweetdata,$config["Request"]["word"]);
+            $ReturnSceen["ContentMain2"] = UiTweetList($config,array(
+               "Data" => $tweetdata
+            ));
          }
-         $tweetdata["tweet"] = DBResult_SearchWord($tweetdata,$config["PostData"]["word"]);
-         $ReturnSceen["ContentMain2"] = UiTweetList($config,array(
-            "Data" => $tweetdata
-         ));
 
         return $ReturnSceen;
     }

@@ -10,6 +10,10 @@
                 require_once ROOT_DIRECTORY . "main/group/create.php";
                 return GroupCreate($config);
                 break;
+            case "removehashtag":
+                require_once ROOT_DIRECTORY . "main/group/removehashtag.php";
+                return GroupRemoveHashTag($config);
+                break;
             case "page":
                 require_once ROOT_DIRECTORY . "main/group/page.php";
                 return GroupPage($config);

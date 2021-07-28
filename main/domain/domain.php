@@ -9,7 +9,7 @@
         $ReturnSceen["ContentHeader"] = UiHeader($config,array());
 
          $ReturnSceen["ContentMain0"] = UiSearchBox($config,array(
-             "Word" => $config["PostData"]["word"]
+             "Word" => $config["Request"]["word"]
          ));
          $ReturnSceen["ContentMain1"] = UiPageHeader($config,array(
              "type" => "Domain",

@@ -40,6 +40,9 @@
         //POST Data
         $Config["PostData"] = $_POST;
 
+        //Request Data
+        $Config["Request"] = $_REQUEST;
+
         //Smarty Template File
         $Config["SmartyTemplateFile"] = "basic.1.tpl";
         $Config["SmartyDialogTemplateFile"] = "basic.dialog.1.tpl";

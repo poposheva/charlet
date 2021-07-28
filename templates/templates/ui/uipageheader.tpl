@@ -41,6 +41,11 @@
             >
                 人気順
             </a>
+            <a class="domainlist_tablist {if $category eq 3}selected{/if}"
+                href="?mode=group&case=page&select={$select}&category=3"
+            >
+                ハッシュタグ一覧
+            </a>
         </div>
     {/if}
 

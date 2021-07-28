@@ -38,4 +38,19 @@
         $DB->NoReturnValueQuery("UPDATE ".HASHTAGTABLE." SET parentgroup='@1' WHERE id=@2",$group,$hash);
     }
 
+    function DBAccessGroup_RemoveHashTag($config,$hash){
+        $DB = new DBAccesser($config);
+
+        $result = $DB->Query("SELECT * FROM ".HASHTAGTABLE." WHERE id=@1",$hash);
+        $group = $result[0]["parentgroup"];
+
+        $result = $DB->Query("SELECT * FROM ".GROUPTABLE." WHERE id=@1",$group);
+        $update_ids = str_replace(",".$hash,"","," . $result[0]["hashtaglist"]);
+
+        $update_ids = substr_replace($update_ids,"",0,1);
+
+        $DB->NoReturnValueQuery("UPDATE ".GROUPTABLE." SET hashtaglist='@1' WHERE id=@2",$update_ids,$group);
+        $DB->NoReturnValueQuery("UPDATE ".HASHTAGTABLE." SET parentgroup='@1' WHERE id=@2","",$hash);
+    }
+
 ?>

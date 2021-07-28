@@ -9,6 +9,14 @@
         return $result[0];
     }
 
+    function DBAccessHashTag_ByGroup($config,$groupid){
+        $DB = new DBAccesser($config);
+
+        $result = $DB->Query("SELECT * FROM ".HASHTAGTABLE." WHERE parentgroup=@1",$groupid);
+        
+        return $result;
+    }
+
     function DBAccessHashTag_Search($config,$tagname){
         $DB = new DBAccesser($config);
 

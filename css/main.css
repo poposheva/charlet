@@ -166,6 +166,13 @@ label input {
   background-color: #cadcff;
 }
 
+/* hashtag list */
+.hashtaglist .hashtaglist_row {
+  font-size: 1.6em;
+  margin: 1vh 0 0 1vw;
+  border-bottom: solid 1px #e4e4e4;
+}
+
 /* tweet */
 
 .tweetbody {

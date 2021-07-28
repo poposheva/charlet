@@ -9,7 +9,7 @@
         $ReturnSceen["ContentHeader"] = UiHeader($config,array());
 
          $ReturnSceen["ContentMain0"] = UiSearchBox($config,array(
-             "Word" => $config["PostData"]["word"]
+             "Word" => $config["Request"]["word"]
          ));
 
          $ReturnSceen["ContentMain1"] = UiPageHeader($config,array(
@@ -30,7 +30,7 @@
                 $tweetdata["tweet"] = DBResult_TimeSort($tweetdata["tweet"]);
                 break;
          }
-         $tweetdata["tweet"] = DBResult_SearchWord($tweetdata,$config["PostData"]["word"]);
+         $tweetdata["tweet"] = DBResult_SearchWord($tweetdata,$config["Request"]["word"]);
          $ReturnSceen["ContentMain2"] = UiTweetList($config,array(
             "Data" => $tweetdata
          ));

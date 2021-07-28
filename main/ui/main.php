@@ -6,4 +6,5 @@
     require_once ROOT_DIRECTORY . "main/ui/tweetlist.php";
     require_once ROOT_DIRECTORY . "main/ui/domainlist.php";
     require_once ROOT_DIRECTORY . "main/ui/uipageheader.php";
+    require_once ROOT_DIRECTORY . "main/ui/hashtaglist.php";
 ?>
