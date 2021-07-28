@@ -208,6 +208,10 @@ label input {
   margin: 2mm 1vw 2mm 0;
 }
 
+.tweetbody div .tweetbody_tweet {
+  word-break: break-word;
+}
+
 .tweetbody div .tweetbody_tweet a:hover {
   text-decoration-line: underline;
 }

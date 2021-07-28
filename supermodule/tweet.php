@@ -6,6 +6,17 @@
 
     function TweetTransform($tweetbody){
         $tweetbody = preg_replace_callback(
+            "/(https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)/",
+            function($m){
+                if(preg_match("/(https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)/",$m[0])){
+                    return "<a href=\"".$m[0]."\">" . $m[0] . "</a>";
+                }else{
+                    return $m[0];
+                }
+            },
+            $tweetbody
+        );
+        $tweetbody = preg_replace_callback(
             "/#[^\s#]*/",
             function($m){
                 if(preg_match("/#[^\s#]*/",$m[0])){
