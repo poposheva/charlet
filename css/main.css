@@ -173,6 +173,11 @@ label input {
   border-bottom: solid 1px #e4e4e4;
 }
 
+.hashtaglist .hashtaglist_row .remove {
+  position: absolute;
+  right: 0;
+}
+
 /* tweet */
 
 .tweetbody {
