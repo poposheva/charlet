@@ -14,6 +14,10 @@
                 require ROOT_DIRECTORY . "main/domain/create.php";
                 return DomainCreate($config);
                 break;
+            case "registgroup":
+                require ROOT_DIRECTORY . "main/domain/registgroup.php";
+                return DomainRegistGroup($config);
+                break;
             case "main":
             default:
                 require ROOT_DIRECTORY . "main/domain/domainmain.php";

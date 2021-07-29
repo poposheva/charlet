@@ -15,6 +15,14 @@
         return $DB->Query("SELECT * FROM ".DOMAINTABLE." WHERE id=@1",$id);
     }
 
+    function DBAccessDomain_AllList($config){
+        $DB = new DBAccesser($config);
+
+        $result = $DB->Query("SELECT * FROM ".DOMAINTABLE."");
+
+        return $result;
+    }
+
     function DBAccessDomain_Create($config){
         $DB = new DBAccesser($config);
 
@@ -22,5 +30,14 @@
         $desc = $config["PostData"]["desc"];
         
         $DB->NoReturnValueQuery("INSERT INTO ".DOMAINTABLE."(name,description,grouplist) VALUES ('@1','@2','')",$name,$desc);
+    }
+
+    function DBAccessDomain_AddGroup($config,$domain,$group){
+        $DB = new DBAccesser($config);
+
+        $result = $DB->Query("SELECT * FROM ".DOMAINTABLE." WHERE id=@1",$domain);
+        $update_ids = $result[0]["grouplist"] . "," . $group;
+
+        $DB->NoReturnValueQuery("UPDATE ".DOMAINTABLE." SET grouplist='@1' WHERE id=@2",$update_ids,$domain);
     }
 ?>

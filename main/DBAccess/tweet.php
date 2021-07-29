@@ -27,16 +27,19 @@
             $record["tweet"] = DBAccessTweet_AllList($config);
         }else{
             if($domain[0]["grouplist"]!=""){
-                $grouplist = $DB->Query("SELECT * FROM ".GROUPTABLE." WHERE id IN (@1)",$domain[0]["grouplist"]);
-                $hashtaglist = $DB->Query("SELECT name FROM ".HASHTAGTABLE."WHERE id IN (@1)",$domain[0]["hashtaglist"]);
+                $grouplist = $DB->Query("SELECT * FROM ".GROUPTABLE." WHERE id IN (-1@1)",$domain[0]["grouplist"]);
+                foreach($grouplist as $value){
+                    $hashtaglist = $DB->Query("SELECT name FROM ".HASHTAGTABLE." WHERE id IN (@1)",$value["hashtaglist"]);
+                    
+                    foreach($hashtaglist as $value){
+                        $part = $DB->Query("SELECT * FROM ".TWEETTABLE." WHERE (tweet LIKE '%@1%' OR type='REPLY') AND id NOT in (-1@2)",$value["name"],$not_ids);
+                        foreach($part as $p){
+                            $record["tweet"][] = $p;
+                            $not_ids .= "," . $p["id"];
+                        }
+                    }    
+                }
     
-                foreach($hashtaglist as $value){
-                    $part = $DB->Query("SELECT * FROM ".TWEETTABLE."WHERE tweet LIKE '%@1%' OR type='REPLY'",$value);
-                    foreach($part as $p){
-                        $record["tweet"][] = $p;
-                        $not_ids .= "," . $p["id"];
-                    }
-                }    
             }
         }
 

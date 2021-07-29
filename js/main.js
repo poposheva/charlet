@@ -69,6 +69,30 @@ function Charlet_RegistHashDialogButton(obj){
     }
 }
 
+function Charlet_RegistorGroupWithDomain(id){
+    ExecuteAjax({
+        type: "GET",
+        url: "?mode=domain&case=registgroup&groupid="+id,
+        datatype: "html"
+    },
+    function(data) {
+        $("#charlet_systemdialog_dialogcontent").html(data);
+        document.getElementById("charlet_systemdialog").showModal();
+    },
+    function (XMLHttpRequest,textStatus,errorThrown) {
+        $("#charlet_systemdialog_dialogcontent").html("エラーが発生しました。しばらく待ってやり直してください。");
+        $("#charlet_systemdialog").attr("open","true");
+    });
+}
+
+function Charlet_RegistGroupDialogButton(obj){
+    if ($(obj).val() != ""){
+        $("#charlet_systemdialog input[type=\"submit\"]").removeAttr("disabled");
+    }else{
+        $("#charlet_systemdialog input[type=\"submit\"]").attr("disabled","true");
+    }
+}
+
 function Charlet_RemoveHashTagFromGroup(id){
     ExecuteAjax({
         type: "GET",

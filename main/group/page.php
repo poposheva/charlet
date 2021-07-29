@@ -15,6 +15,7 @@
          $ReturnSceen["ContentMain1"] = UiPageHeader($config,array(
              "type" => "Group",
              "data" => $GroupInfomation,
+             "link" => array("text"=>"ドメインに登録する","onclick"=>"Charlet_RegistorGroupWithDomain(".$config["URLQuery"]["select"].")"),
              "select" => $config["URLQuery"]["select"],
              "category" => $config["URLQuery"]["category"]
          ));
