@@ -1,0 +1,74 @@
+/* tweet */
+
+.tweetbody {
+  padding: 1vh 0 0 2vw;
+  border-bottom: solid 1px #e4e4e4;
+}
+
+.tweetbody.reply {
+  margin-left: 2.5vw;
+  border-left: 10px solid @maincolor_halflight;
+}
+
+.tweetbody:hover {
+  background-color: #e6e6e6;
+}
+
+.tweetbody a {
+  text-decoration-line: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tweetbody img {
+  width: 15mm;
+  margin: 4px 4px;
+}
+
+.tweetbody img,
+.tweetbody div {
+  display: inline-block;
+}
+
+.tweetbody div {
+  width: 60vw;
+  vertical-align: top;
+}
+
+.tweetbody div .tweetbody_header * {
+  display: inline-block;
+  margin: 2mm 1vw 2mm 0;
+}
+
+.tweetbody div .tweetbody_tweet {
+  word-break: break-word;
+}
+
+.tweetbody div .tweetbody_tweet a:hover {
+  text-decoration-line: underline;
+}
+
+.tweetbody_header_username {
+  font-weight: bold;
+}
+
+.tweetbody_header_usermail {
+  color: #575757;
+}
+
+.tweetbody_header_time {
+  color: #575757;
+  position: absolute;
+  right: 3vw;
+}
+
+.tweetbody div .tweetbody_footer * {
+  margin: 2vh 2vw 2vh 6vw;
+  height: 4vh;
+  width: auto;
+  vertical-align: middle;
+}
+
+.tweetbody div .tweetbody_footer span {
+  margin: 0;
+}

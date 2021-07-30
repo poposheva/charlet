@@ -1,0 +1,65 @@
+/* dialog */
+
+dialog {
+  border-radius: 10px;
+  border: hidden;
+}
+
+dialog button.close_button {
+  border: hidden;
+  background-color: transparent;
+  font-size: 1.6em;
+}
+
+/* registhash dialog */
+
+.dialog_registhash * {
+  display: block;
+  margin: 2vh 2vw;
+}
+
+.dialog_registhash select {
+  font-size: 1.4em;
+}
+
+.dialog_registhash [type="submit"] {
+  margin: 2vh auto;
+}
+
+.dialog_registhash [type="submit"][disabled] {
+  background-color: @maincolor_halflight;
+}
+
+.dialog_registhash textarea {
+  height: 1.6em;
+  font-size: 1.6em;
+  width: 40vw;
+}
+
+/* tweet dialog */
+
+.dialog_tweetdialog img {
+  display: inline-block;
+}
+
+.dialog_tweetdialog div {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.dialog_tweetdialog div textarea {
+  border: hidden;
+  width: 60vw;
+  height: 20vh;
+  font-size: 1.2em;
+}
+
+.dialog_tweetdialog div [type="submit"] {
+  position: absolute;
+  right: 2vw;
+  bottom: 0.5vw;
+}
+
+.dialog_tweetdialog div [type="submit"][disabled] {
+  background-color: @maincolor_halflight;
+}
