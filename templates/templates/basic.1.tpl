@@ -3,6 +3,7 @@
     <head>
         <title>Charlet</title>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" type="text/css" href="css/main.css">
 
         <script src="js/jquery-3.6.0.min.js"></script>

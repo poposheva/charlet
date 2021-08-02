@@ -114,6 +114,31 @@ dialog button.close_button {
 .header a img:hover {
   opacity: 0.5;
 }
+@media (max-width: 400px) {
+  .header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 1.5cm;
+  }
+  .header a {
+    display: inline-block;
+    width: 10vw;
+    margin: 2mm 1mm;
+  }
+  .header a.header_icon_down {
+    display: block;
+    position: absolute;
+    width: 10vw;
+    left: 85vw;
+    top: 0;
+    margin: 2mm 1mm;
+  }
+  .header a img {
+    width: 100%;
+    border-radius: 100%;
+  }
+}
 /* main */
 main {
   position: absolute;
@@ -166,6 +191,14 @@ label input {
 }
 .webform a {
   margin: 4mm;
+}
+@media (max-width: 400px) {
+  main {
+    position: absolute;
+    left: 0cm;
+    top: 2cm;
+    width: 100%;
+  }
 }
 /* domain selector */
 .domainlist a {
