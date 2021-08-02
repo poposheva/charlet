@@ -1,5 +1,5 @@
 <!DOCTYPE html5>
-<html>
+<html lang="ja">
     <head>
         <title>Charlet</title>
         <meta charset="UTF-8">
