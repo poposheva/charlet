@@ -114,7 +114,7 @@ dialog button.close_button {
 .header a img:hover {
   opacity: 0.5;
 }
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .header {
     position: fixed;
     z-index: 1;
@@ -135,7 +135,7 @@ dialog button.close_button {
     margin: 2mm 1mm;
   }
   .header a img {
-    width: 100%;
+    width: 90%;
     border-radius: 100%;
   }
 }
@@ -192,7 +192,7 @@ label input {
 .webform a {
   margin: 4mm;
 }
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   main {
     position: absolute;
     left: 0cm;
@@ -277,6 +277,13 @@ label input {
   color: #575757;
   position: absolute;
   right: 3vw;
+}
+@media (max-width: 500px) {
+  .tweetbody div .tweetbody_footer {
+    position: relative;
+    left: -10vw;
+    width: 110%;
+  }
 }
 .tweetbody div .tweetbody_footer * {
   margin: 2vh 2vw 2vh 6vw;
