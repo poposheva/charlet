@@ -80,6 +80,12 @@ dialog button.close_button {
 .dialog_tweetdialog div [type="submit"][disabled] {
   background-color: #84afff;
 }
+.dialog_tweetdialog .image_button {
+  text-align: left;
+}
+.dialog_tweetdialog .image_button input {
+  display: none;
+}
 /* hashtag list */
 .hashtaglist .hashtaglist_row {
   font-size: 1.6em;

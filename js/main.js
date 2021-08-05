@@ -181,3 +181,21 @@ function Charlet_ReTweet(obj,id) {
         document.getElementById("charlet_systemdialog").showModal();
     });
 }
+
+function Charlet_ImagePosting(obj){
+    var file = $(obj).prop('files')[0];
+        
+    if(!file.type.match('image.*')){
+        $(obj).val('');
+        return;
+    }
+
+    var reader = new FileReader();
+    reader.onload = function() {
+        var img = $('<img>').attr('src',reader.result);
+        var div = $('<div>').addClass("systemdialog_thumbnail");
+        $(div).html(img);
+        $("span.dialog_tweetdialog_thumbnail").append(div);
+    }
+    reader.readAsDataURL(file);
+}
