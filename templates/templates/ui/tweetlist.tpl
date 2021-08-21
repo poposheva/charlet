@@ -19,9 +19,15 @@
                 {TweetTransform($com.tweet)}
             </div>
             <div class="tweetbody_footer">
-                <img alt="返信する" src="image/reply.png" onclick="Charlet_Reply({$com.id})"><span class="reply" onclick="Charlet_Reply({$com.id})">返信</span>
-                <img alt="いいねする" src="image/favorite.png" onclick="Charlet_Favorite($(this),{$com.id})"><span class="favorite">{$com.favorite}</span>
-                <img alt="リツイートする" src="image/retweet.png" onclick="Charlet_ReTweet($(this),{$com.id})"><span class="retweet">{$com.retweet}</span>
+                <button onclick="Charlet_Reply({$com.id})">
+                    <img alt="返信する" src="image/reply.png"><span class="reply">返信</span>
+                </button>
+                <button onclick="Charlet_Favorite($(this),{$com.id})">
+                    <img alt="いいねする" src="image/favorite.png"><span class="favorite">{$com.favorite}</span>
+                </button>
+                <button onclick="Charlet_ReTweet($(this),{$com.id})">
+                    <img alt="リツイートする" src="image/retweet.png"><span class="retweet">{$com.retweet}</span>
+                </button>
             </div>
         </div>
     </div>
@@ -45,9 +51,15 @@
                 {TweetTransform($com.tweet)}
             </div>
             <div class="tweetbody_footer">
-                <img alt="返信する" src="image/reply.png" onclick="Charlet_Reply({$com.id})"><span class="reply" onclick="Charlet_Reply({$com.id})">返信</span>
-                <img alt="いいねする" src="image/favorite.png" onclick="Charlet_Favorite($(this),{$com.id})"><span class="favorite">{$com.favorite}</span>
-                <img alt="リツイートする" src="image/retweet.png" onclick="Charlet_ReTweet($(this),{$com.id})"><span class="retweet">{$com.retweet}</span>
+                <button onclick="Charlet_Reply({$com.id})">
+                    <img alt="返信する" src="image/reply.png"><span class="reply">返信</span>
+                </button>
+                <button onclick="Charlet_Favorite($(this),{$com.id})">
+                    <img alt="いいねする" src="image/favorite.png"><span class="favorite">{$com.favorite}</span>
+                </button>
+                <button onclick="Charlet_ReTweet($(this),{$com.id})">
+                    <img alt="リツイートする" src="image/retweet.png"><span class="retweet">{$com.retweet}</span>
+                </button>
             </div>
         </div>
     </div>
@@ -74,9 +86,15 @@
                 {TweetTransform($com.tweet)}
             </div>
             <div class="tweetbody_footer">
-                <img alt="返信する" src="image/reply.png" onclick="Charlet_Reply({$com.id})"><span class="reply" onclick="Charlet_Reply({$com.id})">返信</span>
-                <img alt="いいねする" src="image/favorite.png" onclick="Charlet_Favorite($(this),{$com.id})"><span class="favorite">{$com.favorite}</span>
-                <img alt="リツイートする" src="image/retweet.png" onclick="Charlet_ReTweet($(this),{$com.id})"><span class="retweet">{$com.retweet}</span>
+                <button onclick="Charlet_Reply({$com.id})">
+                    <img alt="返信する" src="image/reply.png"><span class="reply">返信</span>
+                </button>
+                <button onclick="Charlet_Favorite($(this),{$com.id})">
+                    <img alt="いいねする" src="image/favorite.png"><span class="favorite">{$com.favorite}</span>
+                </button>
+                <button onclick="Charlet_ReTweet($(this),{$com.id})">
+                    <img alt="リツイートする" src="image/retweet.png"><span class="retweet">{$com.retweet}</span>
+                </button>
             </div>
         </div>
     </div>

@@ -294,3 +294,9 @@ label input {
 .tweetbody div .tweetbody_footer span {
   margin: 0;
 }
+.tweetbody div .tweetbody_footer button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 3vh 0;
+}
