@@ -18,6 +18,11 @@
             <div class="tweetbody_tweet">
                 {TweetTransform($com.tweet)}
             </div>
+            {if $com.images}
+            <div class="tweetbody_images">
+                {TweetImageDisplay($com.images)}
+            </div>
+            {/if}
             <div class="tweetbody_footer">
                 <img alt="返信する" src="image/reply.png" onclick="Charlet_Reply({$com.id})"><span class="reply" onclick="Charlet_Reply({$com.id})">返信</span>
                 <img alt="いいねする" src="image/favorite.png" onclick="Charlet_Favorite($(this),{$com.id})"><span class="favorite">{$com.favorite}</span>
@@ -44,6 +49,11 @@
             <div class="tweetbody_tweet">
                 {TweetTransform($com.tweet)}
             </div>
+            {if $com.images}
+            <div class="tweetbody_images">
+                {TweetImageDisplay($com.images)}
+            </div>
+            {/if}
             <div class="tweetbody_footer">
                 <img alt="返信する" src="image/reply.png" onclick="Charlet_Reply({$com.id})"><span class="reply" onclick="Charlet_Reply({$com.id})">返信</span>
                 <img alt="いいねする" src="image/favorite.png" onclick="Charlet_Favorite($(this),{$com.id})"><span class="favorite">{$com.favorite}</span>
@@ -73,6 +83,11 @@
             <div class="tweetbody_tweet">
                 {TweetTransform($com.tweet)}
             </div>
+            {if $com.images}
+            <div class="tweetbody_images">
+                {TweetImageDisplay($com.images)}
+            </div>
+            {/if}
             <div class="tweetbody_footer">
                 <img alt="返信する" src="image/reply.png" onclick="Charlet_Reply({$com.id})"><span class="reply" onclick="Charlet_Reply({$com.id})">返信</span>
                 <img alt="いいねする" src="image/favorite.png" onclick="Charlet_Favorite($(this),{$com.id})"><span class="favorite">{$com.favorite}</span>

@@ -56,4 +56,16 @@
 
         return $record[0];
     }
+
+    function TweetImageDisplay($data){
+        $datas = explode(",",$data);
+        $imgs = "";
+        foreach($datas as $d){
+            if($d!="" && file_exists($d)){
+                $imgs .= "<img src=\"".file_get_contents($d)."\" style=\"width:100%;\">";
+            }
+        }
+
+        return $imgs;
+    }
 ?>

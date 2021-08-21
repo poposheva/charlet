@@ -95,9 +95,10 @@
         $poster = $option["poster"];
         $time = $option["time"];
         $type = $option["type"];
+        $images = $option["images"];
         $reply = ($option["reply"]!="")?$option["reply"]:"0";
 
-        $DB->NoReturnValueQuery("INSERT INTO ".TWEETTABLE."(tweet,poster,time,type,reply) VALUES ('@1','@2','@3','@4','@5')",$tweet,$poster,$time,$type,$reply);
+        $DB->NoReturnValueQuery("INSERT INTO ".TWEETTABLE."(tweet,poster,time,type,reply,images) VALUES ('@1','@2','@3','@4','@5','@6')",$tweet,$poster,$time,$type,$reply,$images);
     }
 
     function DBAccessTweet_Favorite($config,$id){

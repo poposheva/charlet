@@ -193,8 +193,13 @@ function Charlet_ImagePosting(obj){
     var reader = new FileReader();
     reader.onload = function() {
         var img = $('<img>').attr('src',reader.result);
+        var hidden = $('<input>')
+                    .attr('type','hidden')
+                    .attr('name','images_1')
+                    .attr('value',reader.result);
         var div = $('<div>').addClass("systemdialog_thumbnail");
         $(div).html(img);
+        $(div).append(hidden);
         $("span.dialog_tweetdialog_thumbnail").append(div);
     }
     reader.readAsDataURL(file);
