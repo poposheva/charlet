@@ -258,6 +258,9 @@ label input {
   width: 60vw;
   vertical-align: top;
 }
+.tweetbody div .tweetbody_header {
+  margin-bottom: 1vh;
+}
 .tweetbody div .tweetbody_header * {
   display: inline-block;
   margin: 2mm 1vw 2mm 0;

@@ -1,5 +1,6 @@
 <?php
     require_once ROOT_DIRECTORY . "module/singlescreen.php";
+    require_once ROOT_DIRECTORY . "module/MetaTagControlForSEO.php";
 
     require_once ROOT_DIRECTORY . "main/ui/header.php";
     require_once ROOT_DIRECTORY . "main/ui/searchbox.php";

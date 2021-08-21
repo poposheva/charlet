@@ -5,7 +5,11 @@
     function GroupPage($config){
         $ReturnSceen = array();
         $GroupInfomation = DBAccessGroup_One($config,$config["URLQuery"]["select"]);
+        $SEOMeta = new MetaTagControlForSEO();
 
+        $ReturnSceen["Header"] = $SEOMeta->SetDescription("グループ名「".$GroupInfomation["name"]."」のページです。")
+                                         ->BuildHTML();
+        
         $ReturnSceen["ContentHeader"] = UiHeader($config,array());
 
          $ReturnSceen["ContentMain0"] = UiSearchBox($config,array(

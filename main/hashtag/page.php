@@ -5,7 +5,11 @@
     function HashTagPage($config){
         $ReturnSceen = array();
         $PageInfomation = DBAccessHashTag_One($config,$config["URLQuery"]["select"]);
+        $SEOMeta = new MetaTagControlForSEO();
 
+        $ReturnSceen["Header"] = $SEOMeta->SetDescription("ハッシュタグ「".$PageInfomation["name"]."」のページです。")
+                                         ->BuildHTML();
+        
         $ReturnSceen["ContentHeader"] = UiHeader($config,array());
 
          $ReturnSceen["ContentMain0"] = UiSearchBox($config,array(

@@ -7,6 +7,8 @@
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="shortcut icon" href="image/charlet.png">
 
+        {$Header}
+
         <script src="js/jquery-3.6.0.min.js"></script>
         <script src="js/common.js" defer></script>
         <script src="js/main.js" defer></script>

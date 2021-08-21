@@ -3,7 +3,7 @@
         画面表示プログラムを実行します
         $key = ContentHeader で　ヘッダーエリアを
         $key = ContentMain0 - ContentMain6 で　メインコンテンツを
-        $key = Header で　ヘッダー関連情報を
+        $key = Header で　ヘッダーエリアへの追記内容を
     */
     function ProgramResultDisplay($screen,$config){
         $smarty = new UseSmarty();

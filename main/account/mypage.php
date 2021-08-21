@@ -5,7 +5,11 @@
     function AccountMyPage($config){
         $ReturnSceen = array();
         $AccountInfo = DBAccessAccount_One($config,SessionGet("CharletLoginUserID"));
+        $SEOMeta = new MetaTagControlForSEO();
 
+        $ReturnSceen["Header"] = $SEOMeta->SetDescription("ユーザー「".$AccountInfo["name"]."」のページです。")
+                                         ->BuildHTML();
+        
         $ReturnSceen["ContentHeader"] = UiHeader($config,array());
 
          $ReturnSceen["ContentMain0"] = UiSearchBox($config,array(
