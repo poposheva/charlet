@@ -71,6 +71,7 @@ dialog button.close_button {
   width: 60vw;
   height: 20vh;
   font-size: 1.2em;
+  margin-bottom: 2em;
 }
 .dialog_tweetdialog div [type="submit"] {
   position: absolute;

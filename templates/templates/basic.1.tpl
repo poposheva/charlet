@@ -5,10 +5,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="shortcut icon" href="image/charlet.png">
 
         <script src="js/jquery-3.6.0.min.js"></script>
-        <script src="js/common.js"></script>
-        <script src="js/main.js"></script>
+        <script src="js/common.js" defer></script>
+        <script src="js/main.js" defer></script>
     </head>
     <body>
         {if $ContentHeader}
