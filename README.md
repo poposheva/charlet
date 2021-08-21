@@ -10,7 +10,7 @@ Twitter と同じ感覚で知見を投稿し、ハッシュタグで整理して
 
 # イメージ
 
-![img1](https://user-images.githubusercontent.com/59781920/126909545-f78679d2-06a9-4f80-b884-1933befcf8ce.PNG)
+![img1](https://user-images.githubusercontent.com/59781920/130322642-00a2ae4f-6276-4950-a9f0-f509e3f47ce1.PNG)
 
 ハッシュタグ別に閲覧できます
 ![img2](https://user-images.githubusercontent.com/59781920/126909551-715db2da-4ec1-447d-af3f-3eca91814c90.PNG)
