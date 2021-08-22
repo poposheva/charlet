@@ -6,6 +6,7 @@
         <span class="dialog_tweetdialog_thumbnail"></span>
         <label class="image_button">
             <input onchange="Charlet_ImagePosting($(this));" type="file" accept="image/*">
+            <input type="hidden" name="image_counter" value="1">
             <img src="image/tweet_image.png" alt="画像を投稿する">
         </label>
         <input type="submit" value="コメントする" disabled="true">

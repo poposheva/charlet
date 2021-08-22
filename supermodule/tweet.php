@@ -62,7 +62,9 @@
         $imgs = "";
         foreach($datas as $d){
             if($d!="" && file_exists($d)){
-                $imgs .= "<img src=\"".file_get_contents($d)."\" style=\"width:100%;\">";
+                $imgs .= "<div>";
+                $imgs .= "<img src=\"".file_get_contents($d)."\" alt=\"投稿に添付された画像です\" onclick=\"\">";
+                $imgs .= "</div>";
             }
         }
 

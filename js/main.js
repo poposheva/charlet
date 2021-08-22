@@ -184,6 +184,7 @@ function Charlet_ReTweet(obj,id) {
 
 function Charlet_ImagePosting(obj){
     var file = $(obj).prop('files')[0];
+    var imgid = $(obj).parent().children("[type='hidden']").attr('value');
         
     if(!file.type.match('image.*')){
         $(obj).val('');
@@ -195,7 +196,7 @@ function Charlet_ImagePosting(obj){
         var img = $('<img>').attr('src',reader.result);
         var hidden = $('<input>')
                     .attr('type','hidden')
-                    .attr('name','images_1')
+                    .attr('name','images_'+imgid)
                     .attr('value',reader.result);
         var div = $('<div>').addClass("systemdialog_thumbnail");
         $(div).html(img);
@@ -203,4 +204,5 @@ function Charlet_ImagePosting(obj){
         $("span.dialog_tweetdialog_thumbnail").append(div);
     }
     reader.readAsDataURL(file);
+    $(obj).parent().children("[type='hidden']").attr('value',Number(imgid) + 1);
 }
