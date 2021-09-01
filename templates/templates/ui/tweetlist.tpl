@@ -18,6 +18,11 @@
             <div class="tweetbody_tweet">
                 {TweetTransform($com.tweet)}
             </div>
+            {if $com.images}
+            <div class="tweetbody_images">
+                {TweetImageDisplay($com.images)}
+            </div>
+            {/if}
             <div class="tweetbody_footer">
                 <button onclick="Charlet_Reply({$com.id})">
                     <img alt="返信する" src="image/reply.png"><span class="reply">返信</span>
@@ -50,6 +55,11 @@
             <div class="tweetbody_tweet">
                 {TweetTransform($com.tweet)}
             </div>
+            {if $com.images}
+            <div class="tweetbody_images">
+                {TweetImageDisplay($com.images)}
+            </div>
+            {/if}
             <div class="tweetbody_footer">
                 <button onclick="Charlet_Reply({$com.id})">
                     <img alt="返信する" src="image/reply.png"><span class="reply">返信</span>
@@ -85,6 +95,11 @@
             <div class="tweetbody_tweet">
                 {TweetTransform($com.tweet)}
             </div>
+            {if $com.images}
+            <div class="tweetbody_images">
+                {TweetImageDisplay($com.images)}
+            </div>
+            {/if}
             <div class="tweetbody_footer">
                 <button onclick="Charlet_Reply({$com.id})">
                     <img alt="返信する" src="image/reply.png"><span class="reply">返信</span>

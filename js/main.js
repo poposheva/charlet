@@ -181,3 +181,39 @@ function Charlet_ReTweet(obj,id) {
         document.getElementById("charlet_systemdialog").showModal();
     });
 }
+
+function Charlet_ImagePosting(obj){
+    var file = $(obj).prop('files')[0];
+    var imgid = $(obj).parent().children("[type='hidden']").attr('value');
+    
+    if(imgid > 4) return;
+
+    if(!file.type.match('image.*')){
+        $(obj).val('');
+        return;
+    }
+
+    var reader = new FileReader();
+    reader.onload = function() {
+        var img = $('<img>').attr('src',reader.result);
+        var hidden = $('<input>')
+                    .attr('type','hidden')
+                    .attr('name','images_'+imgid)
+                    .attr('value',reader.result);
+        var div = $('<div>').addClass("systemdialog_thumbnail");
+        $(div).html(img);
+        $(div).append(hidden);
+        $("span.dialog_tweetdialog_thumbnail").append(div);
+    }
+    reader.readAsDataURL(file);
+    $(obj).parent().children("[type='hidden']").attr('value',Number(imgid) + 1);
+}
+
+function Charlet_ImageDetailDisplay(obj){
+
+    source = $(obj).attr("src");
+    data = "<img src='"+source+"' style='width:80vw;'>";
+
+    $("#charlet_systemdialog_dialogcontent").html(data);
+    document.getElementById("charlet_systemdialog").showModal();
+}

@@ -4,3 +4,5 @@ css/_main.css
 templates/templates_c
 
 config/*.txt
+
+userimage/*.b64
