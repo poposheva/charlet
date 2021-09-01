@@ -4,7 +4,11 @@
 
     function DomainMain($config){
         $ReturnSceen = array();
+        $SEOMeta = new MetaTagControlForSEO();
 
+        $ReturnSceen["Header"] = $SEOMeta->SetDescription("Charletは情報の共有・蓄積のためのシステムです。")
+                                         ->BuildHTML();
+        
         $ReturnSceen["ContentHeader"] = UiHeader($config,array());
 
          $ReturnSceen["ContentMain0"] = UiSearchBox($config,array(

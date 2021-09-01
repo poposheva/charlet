@@ -71,6 +71,7 @@ dialog button.close_button {
   width: 60vw;
   height: 20vh;
   font-size: 1.2em;
+  margin-bottom: 2em;
 }
 .dialog_tweetdialog div [type="submit"] {
   position: absolute;
@@ -132,7 +133,7 @@ dialog button.close_button {
 .header a img:hover {
   opacity: 0.5;
 }
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .header {
     position: fixed;
     z-index: 1;
@@ -153,7 +154,7 @@ dialog button.close_button {
     margin: 2mm 1mm;
   }
   .header a img {
-    width: 100%;
+    width: 90%;
     border-radius: 100%;
   }
 }
@@ -210,7 +211,7 @@ label input {
 .webform a {
   margin: 4mm;
 }
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   main {
     position: absolute;
     left: 0cm;
@@ -275,6 +276,9 @@ label input {
   width: 60vw;
   vertical-align: top;
 }
+.tweetbody div .tweetbody_header {
+  margin-bottom: 1vh;
+}
 .tweetbody div .tweetbody_header * {
   display: inline-block;
   margin: 2mm 1vw 2mm 0;
@@ -295,6 +299,13 @@ label input {
   color: #575757;
   position: absolute;
   right: 3vw;
+}
+@media (max-width: 500px) {
+  .tweetbody div .tweetbody_footer {
+    position: relative;
+    left: -10vw;
+    width: 110%;
+  }
 }
 .tweetbody div .tweetbody_footer * {
   margin: 2vh 2vw 2vh 6vw;
@@ -326,4 +337,10 @@ label input {
 .tweetbody div .tweetbody_images div img {
   width: 120%;
   height: auto;
+}
+.tweetbody div .tweetbody_footer button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 3vh 0;
 }

@@ -16,7 +16,7 @@
             <img src="image/icon.png">
         </a>
         {/if}
-        <a class="header_icon_down" tabindex="0" onclick="Charlet_TweetDialog()">
+        <a class="header_icon_down" tabindex="0" onclick="Charlet_TweetDialog()" onkeypress="Charlet_TweetDialog()">
             <img alt="つぶやく" src="image/tweet.png" title="つぶやく">
         </a>    
     {else}

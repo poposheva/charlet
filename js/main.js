@@ -158,7 +158,7 @@ function Charlet_Favorite(obj,id) {
         datatype: "html"
     },
     function(data){
-        $(obj).parent().children("span.favorite").html(data);
+        $(obj).children("span.favorite").html(data);
     },
     function (XMLHttpRequest,textStatus,errorThrown) {
         $("#charlet_systemdialog_dialogcontent").html("<h3>ログインしてください。</h3><p>この機能はログインしていないと使用することができません。</p>");
@@ -173,7 +173,7 @@ function Charlet_ReTweet(obj,id) {
         datatype: "html"
     },
     function(data){
-        $(obj).parent().children("span.retweet").html(data);
+        $(obj).children("span.retweet").html(data);
         location.href = location.href;
     },
     function (XMLHttpRequest,textStatus,errorThrown) {

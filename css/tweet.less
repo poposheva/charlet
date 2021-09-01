@@ -35,6 +35,10 @@
   vertical-align: top;
 }
 
+.tweetbody div .tweetbody_header {
+  margin-bottom: 1vh;
+}
+
 .tweetbody div .tweetbody_header * {
   display: inline-block;
   margin: 2mm 1vw 2mm 0;
@@ -60,6 +64,14 @@
   color: #575757;
   position: absolute;
   right: 3vw;
+}
+
+@media (max-width: @ResponsiveWidth) {
+  .tweetbody div .tweetbody_footer {
+    position: relative;
+    left: -10vw;
+    width: 110%;
+  }
 }
 
 .tweetbody div .tweetbody_footer * {
@@ -96,4 +108,11 @@
 .tweetbody div .tweetbody_images div img {
   width: 120%;
   height: auto;
+}
+
+.tweetbody div .tweetbody_footer button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 3vh 0;
 }
