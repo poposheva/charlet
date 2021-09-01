@@ -39,7 +39,7 @@
         $imagedatas = "";
         for($i=1 ; $i <= 4 ; $i++){
             if($config["PostData"]["images_".$i]){
-                $imagedatas .= $imagestore->StoreRepresented_BASE64($config["PostData"]["images_".$i]) . ",";
+                $imagedatas .= $imagestore->StoreRepresented_IMAGEFILE($config["PostData"]["images_".$i]) . ",";
             }
         }
 
