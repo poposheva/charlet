@@ -185,7 +185,9 @@ function Charlet_ReTweet(obj,id) {
 function Charlet_ImagePosting(obj){
     var file = $(obj).prop('files')[0];
     var imgid = $(obj).parent().children("[type='hidden']").attr('value');
-        
+    
+    if(imgid > 4) return;
+
     if(!file.type.match('image.*')){
         $(obj).val('');
         return;
@@ -205,4 +207,13 @@ function Charlet_ImagePosting(obj){
     }
     reader.readAsDataURL(file);
     $(obj).parent().children("[type='hidden']").attr('value',Number(imgid) + 1);
+}
+
+function Charlet_ImageDetailDisplay(obj){
+
+    source = $(obj).attr("src");
+    data = "<img src='"+source+"' style='width:80vw;'>";
+
+    $("#charlet_systemdialog_dialogcontent").html(data);
+    document.getElementById("charlet_systemdialog").showModal();
 }
