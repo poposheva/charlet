@@ -6,7 +6,7 @@
         
         if (SessionGet("SETUP_START")) {
             //セットアップ処理を開始する
-            CreateDB();
+            CreateDB($config);
             SessionSet("SETUP_START",false);
         }
 

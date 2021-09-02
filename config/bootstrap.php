@@ -15,10 +15,12 @@
     require_once ROOT_DIRECTORY . "supermodule/session.php";
     require_once ROOT_DIRECTORY . "supermodule/datetime.php";
     require_once ROOT_DIRECTORY . "supermodule/tweet.php";
+    require_once ROOT_DIRECTORY . "supermodule/ReadFileAgent.php";
     
     function ProgramPreprocessing(){
         //Dir
         $Config["RootDirectory"] = ROOT_DIRECTORY;
+        $Config["ConfigDirectory"] = $Config["RootDirectory"] . "config/";
 
         //DB
         if (file_exists($DBDataFile = $Config["RootDirectory"] . "config/db_resource.txt")){
